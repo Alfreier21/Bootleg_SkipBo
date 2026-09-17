@@ -69,6 +69,11 @@ public class ValidCardMovementTests {
         Assert.assertTrue(game.validationCardMovement(p1, new String[]{"H", "3"}, new String[]{"P", "1"}));
     }
 
+    @Test
+    public void false_emptyReservoirToPlayArea(){
+        Assert.assertFalse(game.validationCardMovement(p1, new String[]{"R", "1"}, new String[]{"P", "1"}));
+    }
+
     //Testing if the cards are removed correctly and play Area is correctly adjusted
     @Test
     public void playerPlaceHand1ToEmptyPlayArea(){
@@ -88,5 +93,18 @@ public class ValidCardMovementTests {
     public void playerPlaceHandJokerToReservoir(){
         game.playerMove("Player1", "H:3", "R:1");
         Assert.assertEquals(99, p1.getReservoir().get(0).peek().intValue());
+        Assert.assertNull(p1.getPlayerHand().get(2));
     }
+
+    //disclaimer: This test never calls gameInitialisation due to us only testing if the moves are valid.
+    //here we test if the card from the play area gets returned it to the cards so they constantly rotate through it
+    @Test
+    public void playerPlaceHandOnPlayAreaValue_cardStackGotCard(){
+        game.playerMove("Player1", "H:1", "P:1");
+        Assert.assertEquals(162, game.getCards().size());
+        game.playerMove("Player1", "H:5", "P:1");
+        Assert.assertEquals(163, game.getCards().size());
+    }
+
+
 }
