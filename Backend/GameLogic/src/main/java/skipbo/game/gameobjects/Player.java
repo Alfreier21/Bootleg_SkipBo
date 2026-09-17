@@ -48,9 +48,9 @@ public class Player {
         this.id = id;
     }
 
-    public Player(String playerName, String id){
+    public Player(String playerName){
         this.playerName = playerName;
-        this.id = id;
+//        this.id = id;
         playerHand = new ArrayList<Integer>();
         reservoir = new ArrayList<Stack<Integer>>();
         for(int i = 0; i<4; i ++){

@@ -18,7 +18,7 @@ public class ValidCardMovementTests {
 
     @Before
     public void setup(){
-        p1 = new Player("Player1", "Id1");
+        p1 = new Player("Player1");
         Stack<Integer> p1Stack = new Stack<>();
         p1Stack.addAll(List.of(9,2,4,7,1));
         p1.setStack(p1Stack);

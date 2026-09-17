@@ -14,8 +14,8 @@ public class CurrentPlayerCanMakeTurnTests {
 
     @Before
     public void setup(){
-        Player p1 = new Player("Player1", "ID1");
-        Player p2 = new Player("Player2", "ID2");
+        Player p1 = new Player("Player1");
+        Player p2 = new Player("Player2");
         game = new Game("Game", p1);
         game.playerJoin(p2);
         game.gameInitialisation();
