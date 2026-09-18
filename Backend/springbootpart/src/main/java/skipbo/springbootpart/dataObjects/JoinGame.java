@@ -5,7 +5,7 @@ package skipbo.springbootpart.dataObjects;
 public class JoinGame {
 
     private String gameName;
-    private String playerName;
+//    private String playerName;
 
     public String getGameName() {
         return gameName;
@@ -15,11 +15,11 @@ public class JoinGame {
         this.gameName = gameName;
     }
 
-    public String getPlayerName() {
-        return playerName;
-    }
-
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
-    }
+//    public String getPlayerName() {
+//        return playerName;
+//    }
+//
+//    public void setPlayerName(String playerName) {
+//        this.playerName = playerName;
+//    }
 }
